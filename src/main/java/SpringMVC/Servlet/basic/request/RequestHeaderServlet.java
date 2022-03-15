@@ -1,4 +1,4 @@
-package SpringMVC.Servlet.basic;
+package SpringMVC.Servlet.basic.request;
 
 /**
  * HTTPServletRequest의 정보를 확인하는 Class
