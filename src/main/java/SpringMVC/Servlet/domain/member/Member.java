@@ -1,5 +1,12 @@
 package SpringMVC.Servlet.domain.member;
 
+/**
+ * MemberVo 형태
+ * 강의명 : 회원관리 애플리케이션 요구사항
+ * @since 2022.03.16
+ * @author sangdob
+ */
+
 import lombok.Getter;
 import lombok.Setter;
 
