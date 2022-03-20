@@ -4,7 +4,7 @@ package SpringMVC.Servlet.domain.member;
  * MemberRepository로써 데이터를 저장하는 singleton형태이다
  * 강의명 : 회원관리 애플리케이션 요구사항
  * @since 2022.03.16
- * @author sangdob
+ * @author sangdobaw
  */
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class MemberRepository {
 
-	private static Map<Long, Member> store = new HashMap<>();
+	private static final Map<Long, Member> store = new HashMap<>();
 	private static long sequence = 0L;
 
 	private static final MemberRepository instance = new MemberRepository();
