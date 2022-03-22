@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet(name = "frontControllerServletV1", urlPatterns = "/frontController/v1/*")
+@WebServlet(name = "frontControllerServletV2", urlPatterns = "/frontController/v2/*")
 public class FrontControllerServletV2 extends HttpServlet {
 
 	private Map<String, ControllerV2> controllerV2Map = new HashMap<>();
