@@ -10,6 +10,8 @@ import SpringMVC.Servlet.basic.web.frontcontroller.v4.controller.MemberListContr
 import SpringMVC.Servlet.basic.web.frontcontroller.v4.controller.MemberSaveControllerV4;
 import SpringMVC.Servlet.basic.web.frontcontroller.v5.adapter.ControllerV3HandlerAdapter;
 import SpringMVC.Servlet.basic.web.frontcontroller.v5.adapter.ControllerV4HandlerAdapter;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -52,8 +54,11 @@ public class FrontControllerServletV5 extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//Request URI정보를 연결 Handler역할
+		//현재 초기화 된 Contoller에서 페이지의 정보를 찾아 Inteface에 연결된 Controller를 찾아준다.
 		Object handler = getHandler(req);
 
+		//handler에 mapping된 uri를 찾아오지 못할 경우 404에러를 나타내고 Return한다.
 		if (handler == null) {
 			resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			return;
@@ -73,6 +78,7 @@ public class FrontControllerServletV5 extends HttpServlet {
 				 return adapter;
 			}
 		}
+
 		throw new IllegalArgumentException("Handler Adapter를 찾을 수 없습니다. \nhandle = " + handler);
 	}
 
